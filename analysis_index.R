@@ -22,9 +22,9 @@ ggplot(data = data, aes(x = pc, y = index)) + geom_point(size = 3) +
 ggplot(data = data, aes(x = pc, y = index)) + geom_point(size = 3) + 
   stat_smooth(method = glm,method.args = list(family = poisson(link = "log"))) 
 
-
-
-
-
-
+x <- c()
+for(i in 1 : 1000){
+  x[i] <- ifelse(pc[i] < mean(pc), "Yes", "No")
+}
+table(x)
 
