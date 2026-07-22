@@ -8,5 +8,8 @@ index <- rpois(1000, mu)
 data <- data.frame(pc = pc, index = index)
 
 
-mod.lm <- lm(index ~ pc, data = data)
-summary(mod.lm)
+x <- c()
+for(i in 1 : 1000){
+  x[i] <- ifelse(pc[i] < mean(pc), "Yes", "No")
+}
+table(x)
